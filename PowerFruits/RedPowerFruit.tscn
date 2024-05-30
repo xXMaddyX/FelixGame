@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dht0li64uh1sb"]
+
+[ext_resource type="Script" path="res://PowerFruits/RedPowerFruit.gd" id="1_41wp6"]
+[ext_resource type="Texture2D" uid="uid://cvtb2htantbq0" path="res://assets/collectables/meet/20 Food Items part01 (by Omel Pixela)/20 Food Items part01 (by Omel Pixela)/PNG/06.png" id="2_4284q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vqdoh"]
+radius = 7.0
+
+[node name="RedPowerFruit" type="Node2D"]
+script = ExtResource("1_41wp6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4284q")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_vqdoh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

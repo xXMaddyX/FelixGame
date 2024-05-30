@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ihkkf8na8o6v"]
+[gd_scene load_steps=20 format=3 uid="uid://ihkkf8na8o6v"]
 
 [ext_resource type="PackedScene" uid="uid://bxj7c06fyaxbt" path="res://ui/ui.tscn" id="1_1fsq1"]
 [ext_resource type="PackedScene" uid="uid://51oo3he2gaa4" path="res://player/player.tscn" id="1_5v88c"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://nv485fktd8xi" path="res://assets/backgroundTiles/FreeCuteTilesetv1/FreeCuteTileset/BG3.png" id="5_x8tas"]
 [ext_resource type="PackedScene" uid="uid://3u5c7svkslgb" path="res://Monster/slimes/Slime.tscn" id="7_us5i8"]
 [ext_resource type="PackedScene" uid="uid://bfna8gba4bsjm" path="res://collectables/meet/meet.tscn" id="8_kwemq"]
+[ext_resource type="PackedScene" uid="uid://dht0li64uh1sb" path="res://PowerFruits/RedPowerFruit.tscn" id="11_sjtql"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ewvtw"]
 texture = ExtResource("4_oiw4b")
@@ -323,3 +324,6 @@ position = Vector2(1485, 518)
 
 [node name="Meet5" parent="." instance=ExtResource("8_kwemq")]
 position = Vector2(1873, 598)
+
+[node name="RedPowerFruit" parent="." instance=ExtResource("11_sjtql")]
+position = Vector2(308, 596)
