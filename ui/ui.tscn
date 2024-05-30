@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxj7c06fyaxbt"]
+
+[ext_resource type="Texture2D" uid="uid://dg1jaephpo5x5" path="res://assets/collectables/meet/20 Food Items part01 (by Omel Pixela)/20 Food Items part01 (by Omel Pixela)/PNG/01.png" id="1_8u2b7"]
+[ext_resource type="Script" path="res://ui/ui.gd" id="1_h228h"]
+
+[node name="Ui" type="CanvasLayer"]
+script = ExtResource("1_h228h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1070, 32)
+texture = ExtResource("1_8u2b7")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1090.0
+offset_top = 20.0
+offset_right = 1130.0
+offset_bottom = 43.0
+text = "X 0"
