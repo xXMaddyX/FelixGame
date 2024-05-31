@@ -119,7 +119,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		animated_sprite_2d.play(actualPower["Jump"])
 
-	if Input.is_action_pressed("dash") and is_on_floor() and not direction == 0:
+	if Input.is_action_pressed("dash") and not direction == 0:
 		dash = true
 	else:
 		dash = false

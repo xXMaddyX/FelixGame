@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://ihkkf8na8o6v"]
+[gd_scene load_steps=23 format=3 uid="uid://ihkkf8na8o6v"]
 
 [ext_resource type="PackedScene" uid="uid://bxj7c06fyaxbt" path="res://ui/ui.tscn" id="1_1fsq1"]
 [ext_resource type="PackedScene" uid="uid://51oo3he2gaa4" path="res://player/player.tscn" id="1_5v88c"]
 [ext_resource type="PackedScene" uid="uid://ckxjv5ftfh2ml" path="res://GameManager/GameManager.tscn" id="1_lo8kw"]
+[ext_resource type="Script" path="res://worlds/world1.gd" id="1_qq5e4"]
 [ext_resource type="Texture2D" uid="uid://be3f5blyrqqs5" path="res://assets/backgroundTiles/FreeCuteTilesetv1/FreeCuteTileset/BG1.png" id="2_ympul"]
 [ext_resource type="Texture2D" uid="uid://cqf84fyjr2pf2" path="res://assets/backgroundTiles/FreeCuteTilesetv1/FreeCuteTileset/Decors.png" id="3_nucrd"]
 [ext_resource type="Texture2D" uid="uid://kf1cvxakgv62" path="res://assets/backgroundTiles/FreeCuteTilesetv1/FreeCuteTileset/BG2.png" id="3_o3g2u"]
@@ -221,6 +222,7 @@ distance = -0.0029524
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nuqnd"]
 
 [node name="World1" type="Node2D"]
+script = ExtResource("1_qq5e4")
 
 [node name="GameManager" parent="." instance=ExtResource("1_lo8kw")]
 unique_name_in_owner = true
