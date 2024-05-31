@@ -13,5 +13,8 @@ func changeDinoPowerState(power):
 func updateDinoPowerState():
 	emit_signal("updateDinoPower", DinoPowerState)
 	
+func resetMeetCounter():
+	meetCounter = 0
+	
 signal updateDinoPower(power)
 signal updateUI(meetCounter)

@@ -7,7 +7,10 @@ var hp = 3
 var isHit = false
 var isDead = false
 var direction = 1
+var shotDirection = 1
 var dash = false
+var deadseq = false
+var shotFired = false
 const Powers = {
 	"Normal": {
 		"Run": "run",
@@ -42,6 +45,9 @@ var actualPower = Powers["Normal"]
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var playerCollider = $CollisionShape2D
+const FIRE_BALL = preload("res://player/fireBall.tscn")
+
 
 func _ready():
 	switchPowers("Normal")
@@ -60,7 +66,6 @@ func animationHandler(powerState):
 		animated_sprite_2d.play(powerState["Idle"])
 		
 func switchPowers(power):
-		print(power)
 		if power == "Fire":
 			Normal = false
 			Fire = true
@@ -88,6 +93,26 @@ func takeDamage():
 func restart_scene():
 	get_tree().reload_current_scene()
 	
+func checkShotPower():
+	if Normal:
+		return
+	elif Fire:
+		var shot = FIRE_BALL.instantiate()
+		if shotDirection == 1:
+			shot.position = global_position
+			shot.position.y += 0
+			shot.position.x += 60 
+		if shotDirection == -1:
+			shot.position = global_position
+			shot.position.y += 0
+			shot.position.x -= 30
+			
+		shot.direction = shotDirection
+		get_tree().root.add_child(shot)
+	elif Water:
+		pass
+	
+	
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -105,10 +130,12 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("move_left") and not isHit:
 		animated_sprite_2d.flip_h = true
 		direction = -1
+		shotDirection = -1
 		velocity.x = direction * SPEED
 	elif Input.is_action_pressed("move_right") and not isHit:
 		animated_sprite_2d.flip_h = false
 		direction = 1
+		shotDirection = 1
 		velocity.x = direction * SPEED
 	else:
 		direction = 0
@@ -122,8 +149,23 @@ func _physics_process(delta):
 		isDead = true
 		
 	if isDead:
-		restart_scene()
+		playerCollider.disabled = true
+		set_collision_layer(0)
+		set_collision_mask(0)
+		deadseq = true
+		GameManager.resetMeetCounter()
 	
 	animationHandler(actualPower)
-
+		
 	move_and_slide()
+
+	if Input.is_action_pressed("fire") and not shotFired:
+		shotFired = true
+		checkShotPower()
+		await get_tree().create_timer(1).timeout
+		shotFired = false
+		
+	if deadseq:
+		await get_tree().create_timer(3).timeout
+		restart_scene()
+		
