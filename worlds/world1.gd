@@ -9,7 +9,7 @@ func _ready():
 func checkMeet():
 	actualMeetCount = GameManager.meetCounter
 
-func _process(delta):
+func _process(_delta):
 	checkMeet()
 	if actualMeetCount >= 5:
 		GameManager.meetCounter = 0

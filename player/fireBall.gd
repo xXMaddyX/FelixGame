@@ -16,7 +16,7 @@ func destroy():
 	queue_free()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	if direction == -1:
 		animated_sprite_2d.flip_h = true
 		animated_sprite_2d.position.x = 0
