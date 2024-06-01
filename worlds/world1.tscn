@@ -300,38 +300,44 @@ position = Vector2(577, 561)
 scale = Vector2(3.60625, 1)
 texture = ExtResource("5_x8tas")
 
-[node name="Slime" parent="." instance=ExtResource("7_us5i8")]
+[node name="slimes" type="Node2D" parent="."]
+
+[node name="Slime" parent="slimes" instance=ExtResource("7_us5i8")]
 position = Vector2(546, 597)
 
-[node name="Slime2" parent="." instance=ExtResource("7_us5i8")]
+[node name="Slime2" parent="slimes" instance=ExtResource("7_us5i8")]
 position = Vector2(697, 597)
 
-[node name="Slime3" parent="." instance=ExtResource("7_us5i8")]
+[node name="Slime3" parent="slimes" instance=ExtResource("7_us5i8")]
 position = Vector2(1052, 596)
 
-[node name="Slime4" parent="." instance=ExtResource("7_us5i8")]
+[node name="Slime4" parent="slimes" instance=ExtResource("7_us5i8")]
 position = Vector2(1162, 597)
 
-[node name="Slime5" parent="." instance=ExtResource("7_us5i8")]
+[node name="Slime5" parent="slimes" instance=ExtResource("7_us5i8")]
 position = Vector2(1597, 597)
 
-[node name="Meet" parent="." instance=ExtResource("8_kwemq")]
+[node name="Meets" type="Node2D" parent="."]
+
+[node name="Meet" parent="Meets" instance=ExtResource("8_kwemq")]
 position = Vector2(396, 552)
 
-[node name="Meet2" parent="." instance=ExtResource("8_kwemq")]
+[node name="Meet2" parent="Meets" instance=ExtResource("8_kwemq")]
 position = Vector2(641, 600)
 
-[node name="Meet3" parent="." instance=ExtResource("8_kwemq")]
+[node name="Meet3" parent="Meets" instance=ExtResource("8_kwemq")]
 position = Vector2(1027, 599)
 
-[node name="Meet4" parent="." instance=ExtResource("8_kwemq")]
+[node name="Meet4" parent="Meets" instance=ExtResource("8_kwemq")]
 position = Vector2(1485, 518)
 
-[node name="Meet5" parent="." instance=ExtResource("8_kwemq")]
+[node name="Meet5" parent="Meets" instance=ExtResource("8_kwemq")]
 position = Vector2(1873, 598)
 
-[node name="RedPowerFruit" parent="." instance=ExtResource("11_sjtql")]
+[node name="PowerFruits" type="Node2D" parent="."]
+
+[node name="RedPowerFruit" parent="PowerFruits" instance=ExtResource("11_sjtql")]
 position = Vector2(308, 596)
 
-[node name="BluePowerFruit" parent="." instance=ExtResource("12_pylkf")]
+[node name="BluePowerFruit" parent="PowerFruits" instance=ExtResource("12_pylkf")]
 position = Vector2(1434, 454)

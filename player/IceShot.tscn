@@ -1,0 +1,128 @@
+[gd_scene load_steps=25 format=3 uid="uid://bidx6x35x8uqr"]
+
+[ext_resource type="Script" path="res://player/IceShot.gd" id="1_ohhq2"]
+[ext_resource type="Texture2D" uid="uid://34h2mo08itoe" path="res://assets/DinoShots/iceShot/VFX 1 Hit1.png" id="1_secmv"]
+[ext_resource type="Texture2D" uid="uid://cyxftdq7xgs4p" path="res://assets/DinoShots/iceShot/VFX 1 Hit2.png" id="2_411i6"]
+[ext_resource type="Texture2D" uid="uid://ln17hqk7xmwm" path="res://assets/DinoShots/iceShot/VFX 1 Hit3.png" id="3_5u7o4"]
+[ext_resource type="Texture2D" uid="uid://4nua0f850ilx" path="res://assets/DinoShots/iceShot/VFX 1 Hit4.png" id="4_ft3aw"]
+[ext_resource type="Texture2D" uid="uid://cr0kyh7yf0vrj" path="res://assets/DinoShots/iceShot/VFX 1 Hit5.png" id="5_mb2yy"]
+[ext_resource type="Texture2D" uid="uid://xa5qie1llqpd" path="res://assets/DinoShots/iceShot/VFX 1 Hit6.png" id="6_wmi16"]
+[ext_resource type="Texture2D" uid="uid://0nmla6k87ytk" path="res://assets/DinoShots/iceShot/VFX 1 Hit7.png" id="7_08p4a"]
+[ext_resource type="Texture2D" uid="uid://dwdajc3b4uw4y" path="res://assets/DinoShots/iceShot/VFX 1 Hit8.png" id="8_qgkp6"]
+[ext_resource type="Texture2D" uid="uid://c62g3yss7047m" path="res://assets/DinoShots/iceShot/VFX 1 Repeatable1.png" id="9_s8hdu"]
+[ext_resource type="Texture2D" uid="uid://bvkm36yqw6nro" path="res://assets/DinoShots/iceShot/VFX 1 Repeatable2.png" id="10_ynqoy"]
+[ext_resource type="Texture2D" uid="uid://beuh4uoxe4yk3" path="res://assets/DinoShots/iceShot/VFX 1 Repeatable3.png" id="11_m4340"]
+[ext_resource type="Texture2D" uid="uid://bb8pw12u8kkd7" path="res://assets/DinoShots/iceShot/VFX 1 Repeatable4.png" id="12_6sdr4"]
+[ext_resource type="Texture2D" uid="uid://carurf2317c6x" path="res://assets/DinoShots/iceShot/VFX 1 Repeatable5.png" id="13_cbikg"]
+[ext_resource type="Texture2D" uid="uid://cmspilnwun6lm" path="res://assets/DinoShots/iceShot/VFX 1 Repeatable6.png" id="14_d2wmy"]
+[ext_resource type="Texture2D" uid="uid://drvrorc333nqm" path="res://assets/DinoShots/iceShot/VFX 1 Repeatable7.png" id="15_aiy20"]
+[ext_resource type="Texture2D" uid="uid://dwnk3yh3f5kk" path="res://assets/DinoShots/iceShot/VFX 1 Repeatable8.png" id="16_fl13c"]
+[ext_resource type="Texture2D" uid="uid://dnmc40n7t8d4d" path="res://assets/DinoShots/iceShot/VFX 1 Repeatable9.png" id="17_otrt3"]
+[ext_resource type="Texture2D" uid="uid://drf7cyjcewsl7" path="res://assets/DinoShots/iceShot/VFX 1 Repeatable10.png" id="18_yp0ic"]
+[ext_resource type="Texture2D" uid="uid://dscdnqemvv47e" path="res://assets/DinoShots/iceShot/VFX 1 Start1.png" id="19_m47si"]
+[ext_resource type="Texture2D" uid="uid://bxcq8nyjoof2p" path="res://assets/DinoShots/iceShot/VFX 1 Start2.png" id="20_ml4ev"]
+[ext_resource type="Texture2D" uid="uid://d0akupekr7mur" path="res://assets/DinoShots/iceShot/VFX 1 Start3.png" id="21_dhlte"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o8bs6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_secmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_411i6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5u7o4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ft3aw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mb2yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_wmi16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_08p4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qgkp6")
+}],
+"loop": true,
+"name": &"shotHit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_s8hdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ynqoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_m4340")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6sdr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_cbikg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_d2wmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_aiy20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fl13c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_otrt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_yp0ic")
+}],
+"loop": true,
+"name": &"shotInFlight",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_m47si")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ml4ev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_dhlte")
+}],
+"loop": true,
+"name": &"shotStart",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jbhn3"]
+radius = 6.99999
+
+[node name="IceShot" type="CharacterBody2D"]
+script = ExtResource("1_ohhq2")
+
+[node name="iceShotAnim" type="AnimatedSprite2D" parent="."]
+z_index = 1
+rotation = -0.0048632
+sprite_frames = SubResource("SpriteFrames_o8bs6")
+animation = &"shotInFlight"
+frame_progress = 0.800618
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 24
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.56885
+shape = SubResource("CapsuleShape2D_jbhn3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
