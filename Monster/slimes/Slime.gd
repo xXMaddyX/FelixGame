@@ -9,12 +9,25 @@ const JUMP_VELOCITY = -400.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite_2d = $AnimatedSprite2D
+#Check Collider Right Left
 @onready var check_right = $checkRight
 @onready var check_left = $checkLeft
+#CheckGroundCollider
+@onready var check_ground_left = $checkGroundLeft
+@onready var check_ground_right = $checkGroundRight
+
+#Explosion Animation
 @onready var explosion = $explosion
+
+#Lights
+@onready var point_light_2d = $PointLight2D
+
 
 func _ready():
 	explosion.hide()
+	
+func setLightsOn():
+	point_light_2d.enabled = true
 
 func animationHandler():
 	if direction == 1 and not isDead:
@@ -35,6 +48,10 @@ func checkCollition():
 		direction = -1
 	if check_left.is_colliding():
 		direction = 1
+	if !check_ground_left.is_colliding():
+		direction = 1
+	if !check_ground_right.is_colliding():
+		direction = -1
 	
 func takeDamage():
 	isDead = true

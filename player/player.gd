@@ -11,6 +11,8 @@ var shotDirection = 1
 var dash = false
 var deadseq = false
 var shotFired = false
+var fireballLight = false
+var iceLight = false
 const Powers = {
 	"Normal": {
 		"Run": "run",
@@ -46,14 +48,18 @@ var actualPower = Powers["Normal"]
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var playerCollider = $CollisionShape2D
+
 const FIRE_BALL = preload("res://player/fireBall.tscn")
 const ICE_SHOT = preload("res://player/IceShot.tscn")
-
 
 func _ready():
 	switchPowers("Normal")
 	GameManager.connect("updateDinoPower", switchPowers)
-
+	
+func setLightsOn():
+	fireballLight = true
+	iceLight = true
+	
 func animationHandler(powerState):
 	if isHit:
 		animated_sprite_2d.play(powerState["GetHit"])
@@ -99,6 +105,8 @@ func checkShotPower():
 		return
 	elif Fire:
 		var shot = FIRE_BALL.instantiate()
+		if fireballLight:
+			shot.lightOn = true
 		if shotDirection == 1:
 			shot.position = global_position
 			shot.position.y += 0
@@ -112,6 +120,8 @@ func checkShotPower():
 		get_tree().root.add_child(shot)
 	elif Water:
 		var shot = ICE_SHOT.instantiate()
+		if iceLight:
+			shot.lightOn = true
 		if shotDirection == 1:
 			shot.position = global_position
 			shot.position.y += 0

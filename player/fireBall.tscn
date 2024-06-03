@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://codowwvi5sva"]
+[gd_scene load_steps=45 format=3 uid="uid://codowwvi5sva"]
 
 [ext_resource type="Script" path="res://player/fireBall.gd" id="1_c6gb6"]
 [ext_resource type="Texture2D" uid="uid://cgt6u2v2t1h3p" path="res://assets/DinoShots/FireShot/img_0.png" id="2_2u40r"]
@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://chspf46gqksnk" path="res://assets/DinoShots/FireShot/img_37.png" id="39_x74aq"]
 [ext_resource type="Texture2D" uid="uid://ebv7ms8n6mr1" path="res://assets/DinoShots/FireShot/img_38.png" id="40_ve8tv"]
 [ext_resource type="Texture2D" uid="uid://dianevftgdic3" path="res://assets/DinoShots/FireShot/img_39.png" id="41_ufcxq"]
+[ext_resource type="Texture2D" uid="uid://b78cq2ywr7vfm" path="res://assets/light/light.png" id="42_2vsdt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1to8k"]
 animations = [{
@@ -178,13 +179,18 @@ height = 547.551
 position = Vector2(-170, -13)
 script = ExtResource("1_c6gb6")
 
+[node name="fireballLight" type="PointLight2D" parent="."]
+enabled = false
+color = Color(0.768627, 0.8, 0, 1)
+texture = ExtResource("42_2vsdt")
+texture_scale = 1.35
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1
 position = Vector2(-31, -8)
 scale = Vector2(0.134062, 0.114062)
 sprite_frames = SubResource("SpriteFrames_1to8k")
 animation = &"ShotAnim"
-frame_progress = 0.139739
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
 collision_layer = 0

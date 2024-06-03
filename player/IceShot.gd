@@ -4,8 +4,11 @@ const SPEED = 200
 var direction = 0  # Richtung des Schusses
 var OrigX = 0
 var isHit = false
+var lightOn = false
+var lightToggel = false
 @onready var ice_shot_anim = $iceShotAnim
 @onready var collision_shape_2d = $Area2D/CollisionShape2D
+@onready var ice_light = $iceLight
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,6 +35,10 @@ func _physics_process(_delta):
 	
 	if position.x > OrigX + 400:
 		queue_free()
+		
+	if lightOn and !lightToggel:
+		ice_light.enabled = true
+		lightToggel = true
 
 
 func _on_area_2d_body_entered(body):

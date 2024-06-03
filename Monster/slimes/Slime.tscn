@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://3u5c7svkslgb"]
+[gd_scene load_steps=29 format=3 uid="uid://3u5c7svkslgb"]
 
 [ext_resource type="Script" path="res://Monster/slimes/Slime.gd" id="1_fcuae"]
 [ext_resource type="Texture2D" uid="uid://bc2qxqbt27edp" path="res://assets/Monster/Slimes/FreeSlime/FreeSlime/slime_idle.png" id="2_g4q5i"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://civki778vonst" path="res://assets/Monster/Slimes/Explosion/Explosion_8/Explosion_8.png" id="11_k762a"]
 [ext_resource type="Texture2D" uid="uid://ba6sr2aej6qyj" path="res://assets/Monster/Slimes/Explosion/Explosion_8/Explosion_9.png" id="12_86arr"]
 [ext_resource type="Texture2D" uid="uid://hhriaheuwptu" path="res://assets/Monster/Slimes/Explosion/Explosion_8/Explosion_10.png" id="13_pb0up"]
+[ext_resource type="Texture2D" uid="uid://b78cq2ywr7vfm" path="res://assets/light/light.png" id="14_o4jnt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5wkwx"]
 atlas = ExtResource("2_g4q5i")
@@ -151,6 +152,7 @@ animation = &"idle"
 frame_progress = 0.435162
 
 [node name="explosion" type="AnimatedSprite2D" parent="."]
+z_index = 2
 position = Vector2(-1.90735e-06, -15)
 scale = Vector2(0.198571, 0.171429)
 sprite_frames = SubResource("SpriteFrames_ba3ny")
@@ -174,5 +176,19 @@ target_position = Vector2(11, 0)
 
 [node name="checkLeft" type="RayCast2D" parent="."]
 target_position = Vector2(-11, 0)
+
+[node name="checkGroundLeft" type="RayCast2D" parent="."]
+position = Vector2(-8, 0)
+target_position = Vector2(0, 25)
+
+[node name="checkGroundRight" type="RayCast2D" parent="."]
+position = Vector2(7, 0)
+target_position = Vector2(0, 25)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+enabled = false
+color = Color(0.4, 0.705882, 1, 1)
+texture = ExtResource("14_o4jnt")
+texture_scale = 0.5
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

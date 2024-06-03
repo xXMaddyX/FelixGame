@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bidx6x35x8uqr"]
+[gd_scene load_steps=26 format=3 uid="uid://bidx6x35x8uqr"]
 
 [ext_resource type="Script" path="res://player/IceShot.gd" id="1_ohhq2"]
 [ext_resource type="Texture2D" uid="uid://34h2mo08itoe" path="res://assets/DinoShots/iceShot/VFX 1 Hit1.png" id="1_secmv"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dscdnqemvv47e" path="res://assets/DinoShots/iceShot/VFX 1 Start1.png" id="19_m47si"]
 [ext_resource type="Texture2D" uid="uid://bxcq8nyjoof2p" path="res://assets/DinoShots/iceShot/VFX 1 Start2.png" id="20_ml4ev"]
 [ext_resource type="Texture2D" uid="uid://d0akupekr7mur" path="res://assets/DinoShots/iceShot/VFX 1 Start3.png" id="21_dhlte"]
+[ext_resource type="Texture2D" uid="uid://b78cq2ywr7vfm" path="res://assets/light/light.png" id="23_60gdt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o8bs6"]
 animations = [{
@@ -119,10 +120,15 @@ frame_progress = 0.800618
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 24
+collision_mask = 56
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 rotation = 1.56885
 shape = SubResource("CapsuleShape2D_jbhn3")
+
+[node name="iceLight" type="PointLight2D" parent="."]
+enabled = false
+color = Color(0.686275, 0.631373, 1, 1)
+texture = ExtResource("23_60gdt")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
